@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pluralsight.javafx.playground.Controller">
+   <children>
+      <GridPane layoutX="13.0" layoutY="11.0" prefHeight="378.0" prefWidth="575.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea fx:id="log" prefHeight="373.0" prefWidth="289.0" GridPane.columnIndex="1" />
+            <AnchorPane fx:id="pane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+
+                   <ToggleButton layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onToggle" text="Toggle A">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="alphabetGroup" />
+                     </toggleGroup></ToggleButton>
+                  <ToggleButton layoutX="14.0" layoutY="59.0" mnemonicParsing="false" onAction="#onToggle" text="Toggle B" toggleGroup="$alphabetGroup" />
+                  <ToggleButton layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#onToggle" text="Toggle C" toggleGroup="$alphabetGroup" />
+
+                   <ToggleButton layoutX="191.0" layoutY="11.0" mnemonicParsing="false" onAction="#onToggle" text="Toggle 1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="numericGroup" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton layoutX="191.0" layoutY="56.0" mnemonicParsing="false" onAction="#onToggle" text="Toggle 2" toggleGroup="$numericGroup" />
+                  <ToggleButton layoutX="191.0" layoutY="107.0" mnemonicParsing="false" onAction="#onToggle" text="Toggle 3" toggleGroup="$numericGroup" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
